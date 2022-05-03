@@ -1,4 +1,11 @@
-@import url('http://fonts.cdnfonts.com/css/lucien-schoenschriftv-cat');
+@font-face {
+    font-family: 'Lucien Schoenschriftv CAT';
+    font-style: normal;
+    font-weight: 400;
+    font-display:block;
+    src: local('Lucien Schoenschriftv CAT'),
+         url('https://fonts.cdnfonts.com/s/16365/Lucian Schoenschrift CAT.woff') format('woff');
+  }
 
 
 *,
@@ -41,6 +48,12 @@
     font-family: var(--font-normal-text);
     color: var(--font-color-1);
     overflow-x: hidden;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #header,
@@ -80,7 +93,7 @@ span {
     height: 70px;
     position: absolute;
     margin-top: 15rem;
-    z-index: 10;
+    z-index: 15;
 
 }
 
@@ -100,6 +113,7 @@ span {
     width: 10rem;
     list-style: none;
     box-shadow: var(--shadow-light);
+    font-family: var(--font-normal-text);
     cursor: pointer;
     opacity: 1;
     transition: opacity 170ms linear 100ms, transform 170ms ease-in-out 80ms, box-shadow 170ms ease-in-out 80ms;
@@ -175,6 +189,7 @@ span {
     border-top-left-radius: 40px;
     border-bottom-right-radius: 40px;
 }
+
 
 .op1 {
     transform: translate(-7.5rem, -4.3rem) skew(15deg) rotate(-15deg);
@@ -352,6 +367,7 @@ span {
     margin: 3rem 1rem;
     height: auto;
     font-weight: lighter;
+    font-family: var(--font-normal-text);
     text-indent: 20px;
     line-height: 1.7;
     font-size: 1.1rem;
@@ -374,6 +390,7 @@ span {
 
 a {
     text-decoration: none;
+    font-family: var(--font-normal-text);
     color: var(--font-color-1);
 }
 
@@ -386,6 +403,7 @@ a {
 .sm-title {
     grid-column: 2;
     margin-top: .3rem;
+    font-family: var(--font-normal-text);
 }
 
 .sm-note {
@@ -395,6 +413,7 @@ a {
     font-weight: lighter;
     text-indent: 10px;
     line-height: 1.7;
+    font-family: var(--font-normal-text);
 }
 
 
@@ -440,11 +459,16 @@ a {
     transition: .2s linear;
 }
 
+.card>h1 {
+    font-family: var(--font-normal-text);
+}
+
 .pr-note {
     margin-top: -1em;
     padding: 0 1em;
     font-size: .9em;
     font-weight: lighter;
+    font-family: var(--font-normal-text);
     text-align: justify;
     text-indent: 10px;
     line-height: 1.5;
@@ -633,6 +657,8 @@ footer {
 p,
 .footer-link {
     color: var(--background-5);
+    font-size: .8rem;
+    font-family: var(--font-normal-text);
     cursor: pointer;
 }
 
@@ -852,4 +878,141 @@ p {
     .ab-note {
         margin-top: 1rem;
     }
+}
+
+@media (max-width: 590px) {
+
+    /*--Header dimensions----*/
+    .header-img2 {
+        width: 250px;
+        height: 40px;
+    }
+
+    /*--About dimensions----*/
+    .label-about {
+        font-size: 2.5rem;
+    }
+
+    .about-img {
+        float: none;
+        display: flex;
+        margin: 1rem auto;
+    }
+
+    .ab-note {
+        margin-top: 1rem;
+    }
+
+    .footer-copyright {
+        font-size: .6rem;
+    }
+
+    /*--Navbar dimensions----*/
+
+    .nav-li {
+        height: 8rem;
+        width: 8rem;
+
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .link-1 {
+        transform: translate(-.1rem, 0rem) skew(-5deg, 5deg) rotate(40deg);  
+        width: 8rem;
+        height: 8.2rem;
+    }
+
+    .link-2 {
+        transform: translate(.1rem, 0rem) rotate(44deg);
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .link-3 {
+        transform: translate(.2rem, -.1rem) skew(5deg, -5deg) rotate(-40deg);
+        width: 8rem;
+        height: 8.2rem;
+    }
+
+    .link-4 {
+        transform: translate(-.2rem, -.2rem) skew(-10deg, 5deg) rotate(40deg);
+        width: 7rem;
+        height: 7.5rem;
+    }
+
+    .link-5 {
+        transform: translate(-.2rem, .6rem) rotate(44deg);
+        width: 5rem;
+        height: 5rem;       
+        
+    }
+
+    .link-6 {
+        transform: translate(-.2rem, .2rem) skew(-10deg, 5deg) rotate(-50deg);
+        width: 6.8rem;
+        height: 7.5rem;
+    }
+
+    .op4,
+    .op6 {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .op1 {
+        transform: translate(-6.5rem, -3.3rem) skew(15deg) rotate(-15deg);
+    }
+
+    .op2 {
+        transform: translate(0rem, -6.8rem) rotate(-45deg);
+    }
+
+    .op3 {
+        transform: translate(6.5rem, -3.3rem) skew(-15deg) rotate(15deg);
+    }
+
+    .op4 {
+        transform: translate(5rem, 4rem) skew(10deg) rotate(-5deg);
+    }
+
+    .op5 {
+        transform: translate(0rem, 5.2rem) rotate(-45deg);
+        width: 5rem;
+        height: 5.5rem;
+    }
+
+    .op6 {
+        transform: translate(-5rem, 4rem) skew(-10deg) rotate(5deg);
+    }
+
+
+    .op1:hover {
+        transform: translate(-7rem, -4rem) skew(15deg) rotate(-20deg) scale(1.05);
+    }
+
+    .op2:hover {
+        transform: translate(0rem, -7.3rem) rotate(-45deg) scale(1.05);       
+    }
+
+    .op3:hover {
+        transform: translate(7rem, -4rem) skew(-15deg) rotate(20deg) scale(1.05);
+    }
+
+    .op4:hover {
+        transform: translate(6.2rem, 4.2rem) skew(10deg) rotate(-15deg) scale(1.05);
+    }
+
+    .op5:hover {
+        transform: translate(0rem, 6.4rem) rotate(-45deg) scale(1.05);
+    }
+
+    .op6:hover {
+        transform: translate(-6.4rem, 4.2rem) skew(-10deg) rotate(15deg) scale(1.05);
+    }
+
+
 }
