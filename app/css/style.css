@@ -50,7 +50,7 @@
     font-family: var(--font-normal-text);
     color: var(--font-color-1);
     overflow-x: hidden;
-    
+    z-index: 0;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -92,7 +92,7 @@ span {
     font-family: var(--font-title-text);
     font-size: 4rem;
     font-weight: 400;
-    z-index: 15;
+    z-index: 10;
 }
 
 
@@ -415,6 +415,7 @@ a {
 .sm-note {
     grid-column: 2;
     padding: 0 .7rem;
+    transform: translateY(-4rem);
     font-weight: lighter;
     text-indent: 10px;
     line-height: 1.7;
@@ -681,7 +682,7 @@ p,
 }
 
 p {
-    margin-top: .7rem;
+    margin-top: .3rem;
 }
 
 
@@ -917,7 +918,7 @@ p {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     /*--Header dimensions----*/
     .navbar-container {
@@ -947,11 +948,14 @@ p {
         margin-left: 1.5rem;
         margin-right: 1.5rem;
     }
-
+    /*--About dimensions----*/
+    .container-social-media{
+        padding: 0 2rem;
+    }
    
 }
 
-@media (max-width: 391px) {
+@media (max-width: 420px) {
     /*--Header dimensions----*/
     .navbar-container {
         width: 390px;
@@ -1114,17 +1118,3 @@ p {
 
 
 }
-
-@media (max-width: 420px) {
-    /*--Header dimensions----*/
-    .navbar-container {
-        width: 420px;
-    }
-
-    footer {
-        width: 420px;
-    }
-
-}
-
-
