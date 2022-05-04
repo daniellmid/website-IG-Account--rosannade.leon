@@ -951,7 +951,7 @@ p {
    
 }
 
-@media (max-width: 420px) {
+@media (max-width: 391px) {
     /*--Header dimensions----*/
     .navbar-container {
         width: 390px;
@@ -961,6 +961,9 @@ p {
         font-size: 3.2rem;
     }
 
+    .navbar-list{
+        right: 2rem;
+    }
 
 
     .nav-link {
@@ -1112,6 +1115,16 @@ p {
 
 }
 
+@media (max-width: 420px) {
+    /*--Header dimensions----*/
+    .navbar-container {
+        width: 420px;
+    }
 
+    footer {
+        width: 420px;
+    }
+
+}
 
 
