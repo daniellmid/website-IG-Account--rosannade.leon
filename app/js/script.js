@@ -1,9 +1,12 @@
 //--------------------------------------------Screen Size adjustment (mobile)
 const documentHeight = () => {
-  const doc = document.documentElement;
-  let size = window.innerHeight +100;
-  doc.style.setProperty("--doc-height", `${size}px`);
-  console.log(`${size}px`);
+  const doc= document.documentElement;
+  var w = doc.clientWidth;
+  var h = doc.clientHeight;
+  
+  doc.style.setProperty("--doc-width", `${w}px`);
+  doc.style.setProperty("--doc-height", `${h}px`);
+  console.log(`Width: ${w}px , height: ${h}px`);
 };
 window.addEventListener("resize", documentHeight);
 
