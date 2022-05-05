@@ -1,12 +1,13 @@
-
 //--------------------------------------------Screen Size adjustment (mobile)
 const documentHeight = () => {
-  const doc = document.documentElement
-  doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
- }
- window.addEventListener("resize", documentHeight);
- documentHeight();
+  const doc = document.documentElement;
+  let size = window.innerHeight -100;
+  doc.style.setProperty("--doc-height", `${size}px`);
+  console.log(`${size}px`);
+};
+window.addEventListener("resize", documentHeight);
 
+documentHeight();
 
 //--------------------------------------------Navbar visibility
 const navbar = document.querySelector(".navbar-container");
@@ -15,13 +16,11 @@ const section = document.getElementById("header");
 const activationPoint = {
   rootMargin: "-50px 0px 0px 0px",
 };
-const headerSectionObserver = new IntersectionObserver(function (
-  e,
-  headerSectionObserver
-) {
+const headerSectionObserver = new IntersectionObserver(function (e, headerSectionObserver) {
   e.forEach((entry) => {
     if (!entry.isIntersecting) {
       navbar.style.top = "0";
+      console.log("funciono, salio");
       navbarList.style.transition = ".4s ease-in-out";
       console.log(entry);
     } else {
@@ -30,11 +29,11 @@ const headerSectionObserver = new IntersectionObserver(function (
       navbarLinks.forEach((link, i) => {
         link.style.animation = "";
       });
-      navbar.style.top = "-5.5rem";
+      navbar.style.top = "-4.7rem";
+      console.log("funciono, se oculto")
     }
   });
-},
-activationPoint);
+}, activationPoint);
 
 headerSectionObserver.observe(section);
 
