@@ -22,7 +22,7 @@ const activationPoint = {
 const headerSectionObserver = new IntersectionObserver(function (e, headerSectionObserver) {
   e.forEach((entry) => {
     if (!entry.isIntersecting) {
-      navbar.style.top = "0";
+      navbar.style.top = "4.7rem";
       console.log("funciono, salio");
       navbarList.style.transition = ".4s ease-in-out";
       console.log(entry);
