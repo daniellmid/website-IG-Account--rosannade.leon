@@ -1,17 +1,11 @@
 
 //--------------------------------------------Screen Size adjustment (mobile)
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-let hh = window.innerWidth * 0.01;
-document.documentElement.style.setProperty('--hh', `${hh}px`);
-
-window.addEventListener('resize', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-  let hh = window.innerWidth * 0.01;
-  document.documentElement.style.setProperty('--hh', `${hh}px`);
-});
+const documentHeight = () => {
+  const doc = document.documentElement
+  doc.style.setProperty('--doc-height', `${window.innerHeight}px`);
+ }
+ window.addEventListener("resize", documentHeight);
+ documentHeight();
 
 
 //--------------------------------------------Navbar visibility

@@ -37,6 +37,8 @@
     --time-1: 100ms;
     --time-2: 200ms;
     --time-3: 300ms;
+
+    --doc-height: 100%;
 }
 
 
@@ -64,10 +66,10 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;   
-    height: 100vh;
-/*-----Screen size adjustment (mobile), Fallback otherwise (100vh)----*/
-    height: calc(var(--vh, 1vh) * 100);
+    width: 100%; 
+    /*-----Screen size adjustment (mobile), Fallback otherwise (100vh)----*/  
+    min-height: 100vh;
+    height: var(--doc-height);
 }
 
 span {
