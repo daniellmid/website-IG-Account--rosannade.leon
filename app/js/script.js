@@ -1,7 +1,7 @@
 //--------------------------------------------Screen Size adjustment (mobile)
 const documentHeight = () => {
   const doc = document.documentElement;
-  let size = window.innerHeight -100;
+  let size = window.innerHeight +100;
   doc.style.setProperty("--doc-height", `${size}px`);
   console.log(`${size}px`);
 };
