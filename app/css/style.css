@@ -958,7 +958,7 @@ p {
    
 }
 
-@media (max-width: 391px) {
+@media (max-width: 450px) {
     /*--Header dimensions----*/
     .navbar-container {
         width: 390px;
