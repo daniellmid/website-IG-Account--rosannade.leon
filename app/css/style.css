@@ -12,7 +12,12 @@
 *::before,
 *::after {
     box-sizing: border-box;
-
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
@@ -37,8 +42,6 @@
     --time-1: 100ms;
     --time-2: 200ms;
     --time-3: 300ms;
-
-
 }
 
 
@@ -53,11 +56,6 @@
     color: var(--font-color-1);
     overflow-x: hidden;
     z-index: 0;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 #header,
@@ -68,7 +66,7 @@ section {
     flex-direction: column;
     /*-----Screen size adjustment (mobile), Fallback otherwise (100vh)----*/  
     width: 100%; 
-    height: var(--doc-width);
+    width: var(--doc-width);
     height: 100vh;
     height: var(--doc-height);
 }
@@ -286,12 +284,12 @@ span {
     align-items: center;
     width: 100%;
     height: 4.5em;
-    top: -5.5rem;
+    top: 0rem;
     background: radial-gradient(circle at top left, var(--background-4), var(--background-2) 50%, var(--background-4));
     box-shadow: var(--shadow-dark);
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    z-index: 10;
+    z-index: 200;
     transition: .4s ease-in-out;
 
 }
@@ -559,13 +557,12 @@ a {
     position: fixed;  
     transform: translateX(100%);
     width: 100%;
-    z-index: 20;
+    z-index: 210;
     background: radial-gradient(circle at top, var(--background-5) 40%, var(--background-3));
     transition: transform 0.3s;
 }
 
 .tab-side-active {
-    position: fixed;
     transform: translateX(0);
 }
 
@@ -581,7 +578,7 @@ a {
     font-size: 2.8rem;
     cursor: pointer;
     color: var(--font-color-1);
-    z-index: 30;
+    z-index: 211;
 }
 
 .ts-container{
@@ -744,12 +741,16 @@ p {
     }
 
     .navbar-list {
+        visibility: hidden;
         flex-direction: column;
         justify-content: center;
         position: fixed;
         height: 0px;
         width: 110px;
         right: 2.5rem;
+        box-shadow: 0px 8px 14px -10px var(--font-color-1);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
         background: linear-gradient(90deg, var(--background-3) -160px, var(--background-4));
         margin-top: 4.52rem;
         cursor: pointer;
@@ -758,9 +759,6 @@ p {
 
     .navbar-list-active {
         height: 340px;
-        box-shadow: 0px 8px 14px -10px var(--font-color-1);
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
         z-index: 1;
     }
 
@@ -776,7 +774,7 @@ p {
         -webkit-text-stroke: .8px var(--font-color-1);
     }
 
-    @keyframes linksFadeOut {
+    @keyframes linksFadeIn {
         0% {
             opacity: 0;
 
@@ -793,19 +791,20 @@ p {
         }
     }
 
-    @keyframes linksFadeIn {
+    @keyframes linksFadeOut {
         0% {
             opacity: 1;
             transform: translateY(0px);
         }
 
         50% {
-            opacity: 0;
+            opacity: 0;            
             transform: translateY(-15px);
         }
 
         100% {
             opacity: 0;
+            
         }
     }
 
@@ -817,6 +816,7 @@ p {
 
         100% {
             height: 340px;
+            
         }
     }
 
@@ -953,12 +953,12 @@ p {
     }
     /*--About dimensions----*/
     .container-social-media{
-        padding: 0 2rem;
+        margin: 0 2rem;
     }
    
 }
 
-@media (max-width: 420px) {
+@media (max-width: 391px) {
     /*--Header dimensions----*/
     .navbar-container {
         width: 390px;
@@ -971,8 +971,8 @@ p {
     .navbar-list{
         right: 2rem;
     }
-
-
+     
+   
     .nav-link {
         font-size: 1.1rem;
         font-weight: bold;
@@ -982,6 +982,7 @@ p {
         transform: translate(-0.8rem, -.6rem) skew(-5deg, 5deg) rotate(40deg);
         width: 8rem;
         height: 8.2rem;
+        
     }
 
     .link-2 {
@@ -991,15 +992,15 @@ p {
     }
 
     .link-3 {
-        transform: translate(-.5rem, -.5rem) skew(5deg, -5deg) rotate(-40deg);
-        width: 8rem;
-        height: 8.2rem;
+        transform: translate(1rem, 1.7rem) skew(5deg, -5deg) rotate(-40deg);
+        width: 5rem;
+        height: 3rem;
     }
 
     .link-4 {
-        transform: translate(0rem, .2rem) skew(-10deg, 5deg) rotate(40deg);
-        width: 7rem;
-        height: 7.5rem;
+        transform: translate(.5rem, .4rem) skew(-10deg, 5deg) rotate(40deg);
+        width: 6.5rem;
+        height: 6.5rem;
     }
 
     .link-5 {
@@ -1023,12 +1024,14 @@ p {
 
     .op1,
     .op3 {
+        margin:0;
+        padding:0;
         width: 7rem;
         height: 7rem;
     }
 
     .op1 {
-        transform: translate(-6.5rem, -3.3rem) skew(15deg) rotate(-15deg);
+        transform: translate(-6rem, -3.3rem) skew(15deg) rotate(-15deg);
     }
 
     .op2 {
@@ -1036,7 +1039,7 @@ p {
     }
 
     .op3 {
-        transform: translate(6.5rem, -3.3rem) skew(-15deg) rotate(15deg);
+        transform: translate(6rem, -3.3rem) skew(-15deg) rotate(15deg);
     }
 
     .op4 {
@@ -1099,7 +1102,7 @@ p {
 
     /*--Social Media Dimensions----*/
     .container-social-media {
-        width: 320px;
+        width: 350px;
         grid-auto-rows: 100px;
         gap: 5px;
     }
